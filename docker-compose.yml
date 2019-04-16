@@ -1,0 +1,27 @@
+tomcat1:
+  image: tomcat:7
+  ports:
+    - 8000:8080
+  volumes:
+    - ./tomcat/server.xml:/usr/local/tomcat/conf/server.xml
+    - ./tomcat/ROOT:/usr/local/tomcat/webapps/ROOT
+
+tomcat2:
+  image: tomcat:7
+  ports:
+    - 8001:8080
+  volumes:
+    - ./tomcat/server.xml:/usr/local/tomcat/conf/server.xml
+    - ./tomcat/ROOT:/usr/local/tomcat/webapps/ROOT
+
+haproxy:
+  image: haproxy:1.7
+  ports:
+    - 80:80
+    - 1234:1234
+  volumes:
+    - ./haproxy:/usr/local/etc/haproxy:ro
+  links:
+    - tomcat1
+    - tomcat2
+
