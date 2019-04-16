@@ -22,4 +22,4 @@ E podemos atualizar o proxy com o seguinte comando:
 
 Este comando envia um sinal HUP para a máquina que está executando o haproxy (neste caso, `haproxy_haproxy_1`), que irá recarregar as configurações em tempo real sem downtime algum.
 
-Para mais informações, ver o artigo no medium: 
+Para mais informações, ver o artigo no medium: https://medium.com/tango-labs/criando-um-proxy-load-balancer-com-tomcat-haproxy-1eb353839e77
